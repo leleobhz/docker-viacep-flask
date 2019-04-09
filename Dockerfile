@@ -1,6 +1,9 @@
-FROM python
+FROM python:alpine
 
 LABEL maintainer="Leonardo Amaral <docker@leonardoamaral.com.br>"
+
+RUN apk add --no-cache --virtual .build-deps \
+    git
 
 # Install requests
 
@@ -18,6 +21,8 @@ RUN mkdir -p /tmp/build && \
     cd viacep-flask && \
     pip install --ignore-installed -r requirements.txt && \
     cd /
+
+RUN apk del .build-deps
 
 # Run flask
 
