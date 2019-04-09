@@ -4,7 +4,7 @@ LABEL maintainer="Leonardo Amaral <docker@leonardoamaral.com.br>"
 
 RUN apk add --no-cache git
 RUN pip install flask requests
-RUN pip install viacep
+RUN pip install git+https://github.com/leogregianin/viacep-python.git
 
 # Build https://github.com/leogregianin/viacep-flask
 
