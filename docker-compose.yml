@@ -10,12 +10,11 @@ services:
       - ENABLE_IPV6=true
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - /srv/docker/nginx-proxy/dhparam.pem:/etc/nginx/dhparam/dhparam.pem:ro 
+      - /srv/docker/nginx-proxy/dhparam.pem:/etc/nginx/dhparam/dhparam.pem:rw
     restart: unless-stopped
     networks:
       - webservices
 
-services:
   viacep:
     build:
       context: https://github.com/leleobhz/docker-viacep-flask.git
@@ -23,6 +22,7 @@ services:
     container_name: viacep
     environment:
       - VIRTUAL_HOST=viacep.local
+      - VIRTUAL_PORT=5000
     restart: unless-stopped
     logging:
       driver: journald

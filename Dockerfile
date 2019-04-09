@@ -24,5 +24,4 @@ RUN mkdir -p /tmp/build && \
 EXPOSE 5000
 
 WORKDIR /tmp/build/viacep-flask
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+ENTRYPOINT ["python", "-m", "flask", "run", "--host=0.0.0.0"]
