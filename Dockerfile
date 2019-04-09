@@ -26,6 +26,8 @@ RUN cd /tmp/build && \
 
 # Run flask
 
+EXPOSE 5000
+
 WORKDIR /tmp/build/viacep-flask
 ENTRYPOINT ["python"]
 CMD ["app.py"]

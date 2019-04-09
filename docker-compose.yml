@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+    environment:
+      - ENABLE_IPV6=true
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /srv/docker/nginx-proxy/dhparam.pem:/etc/nginx/dhparam/dhparam.pem:ro 
+    restart: unless-stopped
+    networks:
+      - webservices
+
+services:
+  viacep:
+    build:
+      context: https://github.com/leleobhz/docker-viacep-flask.git
+      dockerfile: Dockerfile
+    container_name: viacep
+    environment:
+      - VIRTUAL_HOST=viacep.local
+    restart: unless-stopped
+    logging:
+      driver: journald
+    networks: 
+      - webservices
+
+networks:
+  webservices:
+    driver: bridge
+    name: webservices
+
