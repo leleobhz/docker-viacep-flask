@@ -2,9 +2,6 @@ FROM python
 
 LABEL maintainer="Leonardo Amaral <docker@leonardoamaral.com.br>"
 
-RUN pip install requests
-RUN pip install git+https://github.com/leogregianin/viacep-python.git
-
 # Build https://github.com/leogregianin/viacep-flask
 
 RUN mkdir -p /tmp/build && \
