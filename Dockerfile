@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:2-alpine
 
 LABEL maintainer="Leonardo Amaral <docker@leonardoamaral.com.br>"
 
