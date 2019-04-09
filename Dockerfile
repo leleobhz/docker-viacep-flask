@@ -1,4 +1,4 @@
-FROM python
+FROM python:2
 
 LABEL maintainer="Leonardo Amaral <docker@leonardoamaral.com.br>"
 
