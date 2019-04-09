@@ -2,8 +2,9 @@ FROM python
 
 LABEL maintainer="Leonardo Amaral <docker@leonardoamaral.com.br>"
 
-# Basic deps
-RUN pip install requests flask gunicorn itsdangerous Jinja2 MarkupSafe Werkzeug 
+# Install requests
+
+RUN pip install requests
 
 # Build https://github.com/leogregianin/viacep-python
 
