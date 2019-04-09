@@ -8,7 +8,8 @@ RUN pip install viacep
 
 # Build https://github.com/leogregianin/viacep-flask
 
-RUN cd /tmp/build && \
+RUN mkdir -p /tmp/build && \
+    cd /tmp/build && \
     git clone https://github.com/leogregianin/viacep-flask.git && \
     cd viacep-flask && \
     pip install -r requirements.txt && \
