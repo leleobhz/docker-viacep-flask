@@ -8,7 +8,7 @@ RUN pip install requests
 
 # Build https://github.com/leogregianin/viacep-python
 
-RUN pip install git+https://github.com/leleobhz/viacep-python.git
+RUN pip install git+https://github.com/leogregianin/viacep-python.git
 
 # Build https://github.com/leogregianin/viacep-flask
 
