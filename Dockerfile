@@ -3,7 +3,8 @@ FROM python:3-alpine
 LABEL maintainer="Leonardo Amaral <docker@leonardoamaral.com.br>"
 
 RUN apk add --no-cache git
-RUN pip install flask requests viacep
+RUN pip install flask requests
+RUN pip install viacep
 
 # Build https://github.com/leogregianin/viacep-flask
 
